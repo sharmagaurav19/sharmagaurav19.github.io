@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaurav Sharma - Portfolio</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Portfolio of Gaurav Sharma, a Computer Science Engineering student specializing in AI & ML, showcasing projects, skills, and achievements.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon (Inline SVG Base64) -->
+    <!-- Gradient: #c8ff00 to #00ff88 -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImdyYWQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNjOGZmMDA7c3RvcC1vcGFjaXR5OjEiIC8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMDBmZjg4O3N0b3Atb3BhY2l0eToxIiAvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwb2x5Z29uIHBvaW50cz0iNTAgNSwgOTUgMjcuNSwgOTUgNzIuNSwgNTAgOTUsIDUgNzIuNSwgNSAyNy41IiBmaWxsPSJub25lIiBzdHJva2U9InVybCgjZ3JhZCkiIHN0cm9rZS13aWR0aD0iNSIvPjx0ZXh0IHg9IjUwIiB5PSI2NCIgZm9udC1mYW1pbHk9IkpldEJyYWlucyBNb25vLCBtb25vc3BhY2UiIGZvbnQtc2l6ZT0iNDgiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSJ1cmwoI2dyYWQpIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5HPC90ZXh0Pjwvc3ZnPg==">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Theme Init to prevent FOUC -->
+    <script>
+        if (localStorage.getItem('portfolio-theme') === 'light') {
+            document.body.classList.add('light-mode');
+        }
+    </script>
+
+    <!-- Background Grid -->
+    <div class="grid-bg"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-trail"></div>
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo text-gradient">
+                <svg viewBox="0 0 100 100">
+                    <defs>
+                        <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#c8ff00;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#00ff88;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <polygon points="50 5, 95 27.5, 95 72.5, 50 95, 5 72.5, 5 27.5" fill="none" stroke="url(#logo-grad)"
+                        stroke-width="5" />
+                    <text x="50" y="64" font-family="JetBrains Mono, monospace" font-size="48" font-weight="bold"
+                        fill="url(#logo-grad)" text-anchor="middle">G</text>
+                </svg>
+                Gaurav
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions" style="display: flex; align-items: center; gap: 1rem;">
+                <button class="theme-toggle" aria-label="Toggle Theme" id="theme-toggle-btn"
+                    style="position: relative;">
+                    <!-- Sun Icon (Light Mode) -->
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <!-- Moon Icon (Dark Mode) -->
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <canvas id="particles-js"></canvas>
+        <div class="container">
+            <div class="hero-layout">
+                <div class="hero-content">
+                    <span class="hero-greeting mono">Hi, my name is</span>
+                    <h1 class="hero-title">Gaurav Sharma</h1>
+                    <h2 class="hero-subtitle">I build <span class="text-gradient typewriter-text"></span></h2>
+                    <p class="project-desc" style="max-width: 600px; margin-bottom: 2rem; font-size: 1.1rem;">
+                        Computer Science and Engineering student specializing in AI & ML, passionate about developing
+                        scalable solutions and predictive models.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="#contact" class="btn btn-outline">Contact Me</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper">
+                    <img src="gaurav.jpg" alt="Gaurav Sharma">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title"><span class="text-gradient">01.</span> About Me</h2>
+            <div class="about-grid">
+                <div class="about-text glass glass-card" style="padding: 2rem;">
+                    <p>
+                        I'm currently pursuing my B.Tech in Computer Science and Engineering with a specialization in
+                        Artificial Intelligence and Machine Learning at VIT Bhopal University.
+                    </p>
+                    <p>
+                        With a strong foundation in Java, Python, and Machine Learning algorithms, I enjoy bridging the
+                        gap between data and actionable insights. My experience ranges from developing AI-powered image
+                        captioning systems to creating predictive models for financial datasets.
+                    </p>
+                    <p>
+                        Beyond coding, I'm an active leader, having orchestrated major cultural events and fostered
+                        engagement within my college community.
+                    </p>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item glass glass-card">
+                        <div class="info-label">Location</div>
+                        <div class="info-value">Sikar, Rajasthan / Bhopal, MP</div>
+                    </div>
+                    <div class="info-item glass glass-card">
+                        <div class="info-label">Email</div>
+                        <div class="info-value"><a href="mailto:sharmagaurav1911@gmail.com"
+                                class="info-link">sharmagaurav1911@gmail.com</a></div>
+                    </div>
+                    <div class="info-item glass glass-card">
+                        <div class="info-label">Phone</div>
+                        <div class="info-value">+91-9649738281</div>
+                    </div>
+                    <div class="info-item glass glass-card">
+                        <div class="info-label">Degree</div>
+                        <div class="info-value">B.Tech CSE (AIML)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title"><span class="text-gradient">02.</span> Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass glass-card">
+                        <div class="timeline-date">2023 – 2027</div>
+                        <h3 class="timeline-title">B.Tech - Computer Science and Engineering (AIML)</h3>
+                        <div class="timeline-subtitle">VIT Bhopal University, Bhopal, Madhya Pradesh</div>
+                        <div class="timeline-score">CGPA - 8.56</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass glass-card">
+                        <div class="timeline-date">2021 – 2022</div>
+                        <h3 class="timeline-title">Class XII</h3>
+                        <div class="timeline-subtitle">Prince Academy of Higher Education, Sikar, Rajasthan</div>
+                        <div class="timeline-score">Percentage - 85.33%</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass glass-card">
+                        <div class="timeline-date">2019 – 2020</div>
+                        <h3 class="timeline-title">Class X</h3>
+                        <div class="timeline-subtitle">St. Mary’s Senior Sec. School, Sikar, Rajasthan</div>
+                        <div class="timeline-score">Percentage - 87.17%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title"><span class="text-gradient">03.</span> Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category glass glass-card">
+                    <h3 class="mono">Languages</h3>
+                    <div class="skill-list">
+                        <span class="skill-badge">Java</span>
+                        <span class="skill-badge">Python</span>
+                    </div>
+                </div>
+                <div class="skill-category glass glass-card">
+                    <h3 class="mono">Tech & Frameworks</h3>
+                    <div class="skill-list">
+                        <span class="skill-badge">HTML5</span>
+                        <span class="skill-badge">Machine Learning</span>
+                        <span class="skill-badge">SQL</span>
+                        <span class="skill-badge">Pandas</span>
+                        <span class="skill-badge">NumPy</span>
+                        <span class="skill-badge">Scikit-Learn</span>
+                        <span class="skill-badge">Hugging Face Transformers</span>
+                    </div>
+                </div>
+                <div class="skill-category glass glass-card">
+                    <h3 class="mono">Tools</h3>
+                    <div class="skill-list">
+                        <span class="skill-badge">Microsoft Azure</span>
+                        <span class="skill-badge">VS Code</span>
+                        <span class="skill-badge">Git/GitHub</span>
+                        <span class="skill-badge">Canva</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title"><span class="text-gradient">04.</span> Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card glass glass-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Image-Captioning System</h3>
+                    <div class="project-date mono">June 2025</div>
+                    <div class="project-desc">
+                        <ul>
+                            <li>Developed an AI-powered image captioning system leveraging Hugging Face’s BLIP model to
+                                automatically generate natural language descriptions.</li>
+                            <li>Implemented efficient image preprocessing using Pillow.</li>
+                            <li>Developed a modular architecture used by 10+ engineers.</li>
+                            <li>Managed Azure cloud infrastructure ensuring 99.9% uptime and scalability.</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Hugging Face</span>
+                        <span class="tech-tag">BLIP</span>
+                        <span class="tech-tag">Pillow</span>
+                        <span class="tech-tag">Azure</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card glass glass-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Finlatics ML Models</h3>
+                    <div class="project-date mono">January 2025</div>
+                    <div class="project-desc">
+                        <ul>
+                            <li>Worked on data-driven projects applying machine learning techniques to financial
+                                datasets.</li>
+                            <li>Developed predictive models achieving up to 87% accuracy in forecasting financial
+                                trends.</li>
+                            <li>Enhanced model performance by 15% through feature engineering and hyperparameter tuning.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">NumPy</span>
+                        <span class="tech-tag">Scikit-Learn</span>
+                        <span class="tech-tag">ML Algorithms</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <div class="container">
+            <h2 class="section-title"><span class="text-gradient">05.</span> Certifications</h2>
+            <div class="cert-grid">
+                <div class="cert-card glass glass-card">
+                    <div class="cert-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 15l8.38-4.69a1.5 1.5 0 0 0 0-2.62L12 3 3.62 7.69a1.5 1.5 0 0 0 0 2.62L12 15z">
+                            </path>
+                            <path d="M12 15v9"></path>
+                            <path d="M19 11v6.5a2.5 2.5 0 0 1-5 0V14"></path>
+                            <path d="M5 11v6.5a2.5 2.5 0 0 0 5 0V14"></path>
+                        </svg>
+                    </div>
+                    <div class="cert-info">
+                        <h4>GEN AI Using IBM Watsonx</h4>
+                    </div>
+                </div>
+                <div class="cert-card glass glass-card">
+                    <div class="cert-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                            </polygon>
+                        </svg>
+                    </div>
+                    <div class="cert-info">
+                        <h4>Microsoft Azure Data Fundamentals (DP-900)</h4>
+                    </div>
+                </div>
+                <div class="cert-card glass glass-card">
+                    <div class="cert-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="8" r="7"></circle>
+                            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                        </svg>
+                    </div>
+                    <div class="cert-info">
+                        <h4>Machine Learning Program - Finlatics</h4>
+                    </div>
+                </div>
+                <div class="cert-card glass glass-card">
+                    <div class="cert-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <div class="cert-info">
+                        <h4>Cloud Computing- NPTEL</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Extracurriculars -->
+    <section id="extracurricular">
+        <div class="container">
+            <h2 class="section-title"><span class="text-gradient">06.</span> Extra-Curriculars</h2>
+            <div class="activity-grid">
+                <div class="activity-card glass glass-card">
+                    <div class="activity-header">
+                        <div>
+                            <div class="activity-role">Team Lead (Cultural Team)</div>
+                            <div class="activity-org">Advitya’25 - Hindi Club</div>
+                        </div>
+                        <div class="activity-date mono">Feb 2025</div>
+                    </div>
+                    <div class="activity-desc">
+                        Orchestrated the main stage performance for "Advitya" and led all cultural performances for the
+                        annual fest "KavyaManch", managing a team of 30+ performers. Streamlined event logistics and
+                        rehearsal schedules, ensuring a seamless execution that attracted an audience of 200+.
+                    </div>
+                </div>
+                <div class="activity-card glass glass-card">
+                    <div class="activity-header">
+                        <div>
+                            <div class="activity-role">Team Lead (Cultural Team)</div>
+                            <div class="activity-org">Mharo Rajasthan Club</div>
+                        </div>
+                        <div class="activity-date mono">Sept 2024 - Dec 2024</div>
+                    </div>
+                    <div class="activity-desc">
+                        Successfully organizing and managing 5+ events at college, including the biggest and successful
+                        cultural event ‘Tharfest’24’. Skilled in event planning, team coordination, and leadership,
+                        fostering cultural engagement and participation.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer & Contact -->
+    <footer id="contact">
+        <div class="container">
+            <div class="social-links">
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/gaurav-sharma-7972a3219" target="_blank" aria-label="LinkedIn"
+                    title="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <!-- GitHub -->
+                <a href="https://github.com/luvgaurav19" target="_blank" aria-label="GitHub" title="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                        </path>
+                    </svg>
+                </a>
+                <!-- Email -->
+                <a href="mailto:sharmagaurav1911@gmail.com" aria-label="Email" title="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                </a>
+                <!-- LeetCode (Code Icon) -->
+                <a href="https://leetcode.com/u/sharmagaurav19/" target="_blank" aria-label="LeetCode" title="LeetCode">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                </a>
+            </div>
+            <p class="copyright">Designed & Built by Gaurav Sharma</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // --- Theme Toggle Logic ---
+        const themeBtn = document.getElementById('theme-toggle-btn');
+        themeBtn.addEventListener('click', () => {
+            // Rotate animation
+            themeBtn.classList.add('rotate');
+            setTimeout(() => themeBtn.classList.remove('rotate'), 400);
+
+            // Toggle theme
+            if (document.body.classList.contains('light-mode')) {
+                document.body.classList.remove('light-mode');
+                localStorage.setItem('portfolio-theme', 'dark');
+            } else {
+                document.body.classList.add('light-mode');
+                localStorage.setItem('portfolio-theme', 'light');
+            }
+        });
+
+        // --- Custom Cursor ---
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorTrail = document.querySelector('.cursor-trail');
+
+        window.addEventListener('mousemove', (e) => {
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+
+            // Trail follows with slight delay using requestAnimationFrame
+            cursorTrail.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: "forwards" });
+        });
+
+        // Hover effect for cursor
+        const interactiveElements = document.querySelectorAll('a, button, .glass-card, .skill-badge');
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursorTrail.style.width = '50px';
+                cursorTrail.style.height = '50px';
+                cursorTrail.style.borderColor = 'var(--primary)';
+                cursorTrail.style.backgroundColor = 'rgba(0, 212, 255, 0.1)';
+            });
+            el.addEventListener('mouseleave', () => {
+                cursorTrail.style.width = '30px';
+                cursorTrail.style.height = '30px';
+                cursorTrail.style.borderColor = 'var(--secondary)';
+                cursorTrail.style.backgroundColor = 'transparent';
+            });
+        });
+
+        // --- Navbar Scroll & Mobile Menu ---
+        const navbar = document.getElementById('navbar');
+        const mobileBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        mobileBtn.addEventListener('click', () => {
+            mobileBtn.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // --- Typewriter Effect ---
+        const textElement = document.querySelector('.typewriter-text');
+        const words = ['AI Solutions.', 'Machine Learning Models.', 'Scalable Systems.', 'the Future.'];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function type() {
+            const currentWord = words[wordIndex];
+
+            if (isDeleting) {
+                textElement.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                textElement.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = 100;
+            if (isDeleting) typeSpeed = 50;
+
+            if (!isDeleting && charIndex === currentWord.length) {
+                typeSpeed = 2000; // Pause at end of word
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                typeSpeed = 500; // Pause before next word
+            }
+
+            setTimeout(type, typeSpeed);
+        }
+
+        // Start typing effect
+        setTimeout(type, 1000);
+
+        // --- Scroll Reveal Animation ---
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // --- Active Nav Link on Scroll ---
+        const sections = document.querySelectorAll('section');
+        const navItems = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href').includes(current)) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // --- Particle.js-style Background (Pure Canvas/JS) ---
+        const canvas = document.getElementById('particles-js');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.radius = Math.random() * 2;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0 || this.x > width) this.vx *= -1;
+                if (this.y < 0 || this.y > height) this.vy *= -1;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = document.body.classList.contains('light-mode') ? 'rgba(74, 124, 0, 0.3)' : 'rgba(200, 255, 0, 0.5)';
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < 50; i++) {
+            particles.push(new Particle());
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, width, height);
+
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+
+                // Draw connections
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 150) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = document.body.classList.contains('light-mode') ? `rgba(0, 122, 61, ${0.4 * (1 - distance / 150)})` : `rgba(0, 255, 136, ${1 - distance / 150})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animateParticles);
+        }
+
+        animateParticles();
+    </script>
+</body>
+
+</html>
